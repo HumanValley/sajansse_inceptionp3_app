@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: app-service         # Nom DNS : app1-service.default.svc.cluster.local
+  name: wil-playground-service         # Nom DNS : wil-playground-service.default.svc.cluster.local
 spec:
   selector:
-    app: app                # Sélectionne tous les pods avec le label "app: app1"
+    app: wil-playground     # Sélectionne tous les pods avec le label "app: wil-playground"
   type: NodePort            # Permet d'ouvrir le port
   ports:
   - port: 80                # Port du Service (ce qu'on appelle de l'extérieur)
