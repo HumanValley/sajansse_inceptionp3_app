@@ -9,7 +9,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    repoURL: https://github.com/HumanValley/Inception_app.git
+    repoURL: https://github.com/HumanValley/sajansse_inceptionp3_app.git
     targetRevision: HEAD
     path: app
   syncPolicy:
