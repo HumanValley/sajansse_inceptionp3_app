@@ -8,3 +8,4 @@ spec:
   ports:
   - port: 80                # Port du Service (ce qu'on appelle de l'extérieur)
     targetPort: 80          # Port du container (nginx écoute sur 80)
+    nodePort: 30080       # <-- port exposé sur le noeud (doit être entre 30000 et 32767)
