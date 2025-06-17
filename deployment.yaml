@@ -1,0 +1,41 @@
+# Application 1
+apiVersion: apps/v1          # Version de l'API Kubernetes pour les Deployments
+kind: Deployment             # Type de ressource = Deployment
+metadata:                    # Métadonnées du Deployment
+  name: app                  # Nom du Deployment (unique dans le namespace)
+spec:                        # Spécifications du Deployment
+  replicas: 1                # Nombre de pods à maintenir en vie
+  selector:                  # Comment le Deployment trouve SES pods
+    matchLabels:             
+      app: app               # "Gérer tous les pods avec le label app=app1"
+  template:                  # Template du pod (modèle pour créer les pods)
+    metadata:                # Métadonnées du pod
+      labels:                
+        app: app             # Label qui sera appliqué à chaque pod créé
+    spec:                    # Spécifications du pod
+      containers:            # Liste des containers dans le pod
+      - name: app            # Nom du container
+        image: nginx:alpine  # Image Docker à utiliser
+        ports:               # Ports exposés par le container
+        - containerPort: 80  # Nginx écoute sur le port 80
+        volumeMounts:        # Où monter les volumes dans le container
+        - name: html         # Nom du volume (défini plus bas)
+          mountPath: /usr/share/nginx/html  # Chemin dans le container
+      volumes:               # Volumes disponibles pour le pod
+      - name: html           # Nom du volume
+        configMap:           # Type de volume = ConfigMap
+          name: app-html     # Nom du ConfigMap à utiliser
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-html            # Nom du ConfigMap
+data:
+  index.html: |             # Nom du fichier qu'il va créer
+    <html>
+    <body>
+      <h1>Application de fou malade</h1>  # Contenu du fichier
+      <p>Vous êtes avec argocd !</p>
+    </body>
+    </html>
