@@ -36,6 +36,6 @@ data:
     <html>
     <body>
       <h1>Application de fou malade</h1>  # Contenu du fichier
-      <p>Vous êtes avec argocd !</p>
+      <p>Vous êtes avec argocd update !</p>
     </body>
     </html>
