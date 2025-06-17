@@ -5,6 +5,7 @@ metadata:
 spec:
   selector:
     app: app                # Sélectionne tous les pods avec le label "app: app1"
+  type: NodePort            # Permet d'ouvrir le port
   ports:
   - port: 80                # Port du Service (ce qu'on appelle de l'extérieur)
     targetPort: 80          # Port du container (nginx écoute sur 80)
