@@ -17,4 +17,4 @@ spec:                        # Spécifications du Deployment
       - name: wil-playground            # Nom du container
         image:  wil42/playground:v1  # Image Docker à utiliser
         ports:               # Ports exposés par le container
-        - containerPort: 80  # Nginx écoute sur le port 80
+        - containerPort: 8888  # will playground écoute sur le port 8888
