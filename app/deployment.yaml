@@ -15,6 +15,6 @@ spec:                        # Spécifications du Deployment
     spec:                    # Spécifications du pod
       containers:            # Liste des containers dans le pod
       - name: wil-playground            # Nom du container
-        image:  wil42/playground:v2  # Image Docker à utiliser
+        image:  wil42/playground:v1  # Image Docker à utiliser
         ports:               # Ports exposés par le container
         - containerPort: 8888  # will playground écoute sur le port 8888
