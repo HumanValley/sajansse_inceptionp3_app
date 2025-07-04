@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: wil-playground-service         # Nom DNS : wil-playground-service.default.svc.cluster.local
+  name: wil-playground-service         
 spec:
   selector:
-    app: wil-playground     # Sélectionne tous les pods avec le label "app: wil-playground"
-  type: NodePort            # Permet d'ouvrir le port
+    app: wil-playground  
+  type: NodePort           
   ports:
-  - port: 8888                # Port du Service (ce qu'on appelle de l'extérieur)
-    targetPort: 8888          # Port du container (nginx écoute sur 80)
-    nodePort: 30080       # <-- port exposé sur le noeud (doit être entre 30000 et 32767)
+  - port: 8888           
+    targetPort: 8888  
+    nodePort: 30080
