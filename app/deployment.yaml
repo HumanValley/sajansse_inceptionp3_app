@@ -1,20 +1,20 @@
 # Application 1
-apiVersion: apps/v1          # Version de l'API Kubernetes pour les Deployments
-kind: Deployment             # Type de ressource = Deployment
-metadata:                    # Métadonnées du Deployment
-  name: wil-playground                  # Nom du Deployment (unique dans le namespace)
-spec:                        # Spécifications du Deployment
-  replicas: 1                # Nombre de pods à maintenir en vie
-  selector:                  # Comment le Deployment trouve SES pods
+apiVersion: apps/v1          
+kind: Deployment             
+metadata:                    
+  name: wil-playground             
+spec:             
+  replicas: 1         
+  selector:              
     matchLabels:             
-      app: wil-playground               # "Gérer tous les pods avec le label app=app"
-  template:                  # Template du pod (modèle pour créer les pods)
-    metadata:                # Métadonnées du pod
+      app: wil-playground         
+  template:          
+    metadata:           
       labels:                
-        app: wil-playground             # Label qui sera appliqué à chaque pod créé
-    spec:                    # Spécifications du pod
-      containers:            # Liste des containers dans le pod
-      - name: wil-playground            # Nom du container
-        image:  wil42/playground:v2  # Image Docker à utiliser
-        ports:               # Ports exposés par le container
-        - containerPort: 8888  # will playground écoute sur le port 8888
+        app: wil-playground         
+    spec:               
+      containers:     
+      - name: wil-playground         
+        image:  wil42/playground:v2 
+        ports:        
+        - containerPort: 8888  
